@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="episode">
+    <img src="{{BaseUrl + episode.image.small}}" />
+    <ion-card-content>
+      <ion-card-title>
+        {{eposide.name | uppercae}}
+      </ion-card-title>
+      <p>
+        {{episode.summary}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <div [hidden] = "episode || epErrMsg">
+    <ion-spinner>
+      <h3>...loading, loading, loading, please wait!</h3>
+    </ion-spinner>
+  </div>
+  <div *ngIf="epErrMsg">
+    <h3>Error:</h3>
+    <p>{{epErrMsg}}</p>
+  </div>
+ 
+</ion-content>

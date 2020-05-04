@@ -1,0 +1,7 @@
+{
+  "name": "friendsApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
